@@ -1,0 +1,8 @@
+{
+    "NA": 0,
+    "inhibitor": 1,
+    "substrate": 2,
+    "agonist": 3,
+    "unknown": 4,
+    "other": 5
+}
