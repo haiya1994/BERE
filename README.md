@@ -1,5 +1,5 @@
 # BERE
-Implementation of the paper [BERE: AN ACCURATE DISTANTLY-SUPERVISIED BIOMEDICAL RELATIONSHIP EXTRSCTION NETWORK](https://arxiv.org/).
+Implementation of the paper [{BERE: An accurate distantly supervised biomedical entity relation extraction network](https://arxiv.org/abs/1906.06916).
 
 ## Environment
 Tested on Python 3.5 and PyTorch 1.0.0.
