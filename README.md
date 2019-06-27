@@ -12,12 +12,16 @@ Please put it in \BERE\data\dti.
 
 
 ## How to Run
-{DDI Expirement}
+[DDI Expirement]
+
 Run train_ddi.py for training
 
 Run test_ddi.py for testing
 
+
+
 {DTI Expirement}
+
 Run train_dti.py for training
 
 Run test_dti.py for testing
