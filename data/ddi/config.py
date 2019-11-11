@@ -27,7 +27,7 @@ DROP_PROB = 0.5
 L2_REG = 0
 HALVE_LR_EVERY = 5000
 LEARNING_RATE = 0.0007
-BATCH_SIZE = 96
+BATCH_SIZE = 128
 MAX_EPOCHS = 50
 
 logging.info('Loading config of {}'.format(ROOT_DIR))
