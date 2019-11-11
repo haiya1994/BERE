@@ -5,10 +5,10 @@ Implementation of the paper [BERE: An accurate distantly supervised biomedical e
 Tested on Python 3.5 and PyTorch 1.0.0.
 
 ## Data
-The download link of new DTI dataset:
+The download link of full datasets:
 https://cloud.tsinghua.edu.cn/d/9a117f17200e4b55b79f/
 
-Please put it in \BERE\data\dti.
+Please put it in \BERE\data.
 
 
 ## How to Run
