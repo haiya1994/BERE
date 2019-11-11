@@ -7,7 +7,7 @@ from network.model import *
 logging.basicConfig(level=logging.INFO,
                     format='%(asctime)s %(levelname)-8s %(message)s')
 
-DEVICE = 'cuda:2'
+DEVICE = 'cuda:0'
 
 
 def test(config, model_name):
@@ -43,6 +43,7 @@ def test(config, model_name):
     print('# of word embedding parameters: {}'.format(num_embedding_params))
     print('# of parameters (excluding embeddings): {}'.format(num_params - num_embedding_params))
 
+    # model.load_state_dict(torch.load(utils.best_model_path(config.SAVE_DIR, config.DATA_SET, i=1), map_location='cpu'))
     model.load_state_dict(
         torch.load(os.path.join(config.SAVE_DIR, config.DATA_SET, model_name), map_location='cpu'))
     model.eval()
@@ -63,10 +64,12 @@ def test(config, model_name):
         return logit.cpu()
 
     test_result = []
+    test_preds = []
 
     for test_batch in test_loader:
         test_logit = run_iter(batch=test_batch)
-
+        test_pred = test_logit.max(1)[1]
+        test_preds.extend(test_pred)
         for idx in range(len(test_logit)):
             for rel in range(1, vocab.class_num):
                 test_result.append(
@@ -87,6 +90,14 @@ def test(config, model_name):
     auc = metrics.auc(x=x, y=y)
 
     logging.info('auc =  {:.4f}'.format(auc))
+    test_preds = [int(t) for t in test_preds]
+
+    test_p, test_r, test_f1, _ = metrics.precision_recall_fscore_support(test_labels, test_preds,
+                                                                         labels=[1, 2, 3, 4, 5],
+                                                                         average='micro')
+
+    logging.info(
+        'precision =  {:.4f}: recall = {:.4f}, fscore = {:.4f}'.format(test_p, test_r, test_f1))
 
     result_dir = os.path.join(config.RESULT_DIR, config.DATA_SET)
     if not os.path.isdir(result_dir):

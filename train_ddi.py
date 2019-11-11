@@ -156,8 +156,9 @@ def train(config, log_path):
 
 if __name__ == '__main__':
     from data.ddi import config
-    DEVICE = 'cuda:1'
-    config.LEARNING_RATE = 0.0007
-    train(config, 'ddi.log')
 
-
+    DEVICE = 'cuda:3'
+    lr = 0.0007
+    for i in range(1):
+        config.LEARNING_RATE = lr
+        F = train(config, 'ddi.log')

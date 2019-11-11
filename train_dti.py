@@ -9,7 +9,7 @@ from network.model import *
 logging.basicConfig(level=logging.INFO,
                     format='%(asctime)s %(levelname)-8s %(message)s')
 
-
+DEVICE = 'cuda:2'
 VALID_TIMES = 20
 
 
@@ -177,6 +177,5 @@ def train(config, log_path):
 if __name__ == '__main__':
     from data.dti import config
 
-    DEVICE = 'cuda:2'
-    config.LEARNING_RATE = 0.0001
+    config.LEARNING_RATE = 1 / 10000.0
     train(config, 'dti.log')

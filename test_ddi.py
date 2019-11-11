@@ -84,4 +84,4 @@ def test(config, model_name):
 if __name__ == '__main__':
     from data.ddi import config
 
-    test(config, 'ddi-0.8331.pkl')
+    test(config, 'ddi-0.8915.pkl')
