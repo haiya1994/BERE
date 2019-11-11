@@ -34,6 +34,7 @@ class REModel_INS(nn.Module):
             hidden_dim = 2 * hidden_dim
 
         self.encoder = GumbelTreeGRU(hidden_dim)
+        self.selector = BagAttention(3 * hidden_dim)
 
         feat_dim = 3 * hidden_dim
 
@@ -50,7 +51,6 @@ class REModel_INS(nn.Module):
         ent2_mask = torch.eq(sent, self.ent2_id).unsqueeze(-1).float()
 
         word_embedding = self.dropout(self.word_emb(sent))
-
         tag_embedding = self.dropout(self.tag_emb(tag))
 
         embedding = torch.cat([word_embedding, tag_embedding], dim=-1)
@@ -148,7 +148,7 @@ class REModel_BAG(nn.Module):
 
         feat = torch.cat([tree_feat, ent1_feat, ent2_feat], -1)
 
-        feat, sent_attn  = self.selector(feat, scope)
+        feat, sent_attn = self.selector(feat, scope)
 
         feat = self.dropout(feat)
         logit = self.classifier(feat)

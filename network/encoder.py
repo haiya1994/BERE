@@ -1,10 +1,10 @@
 import numpy as np
 import torch
+import torch.nn.functional as F
 from torch import nn
 from torch.nn import init
 
 from network import utils as utils
-
 
 class MultiAttn(nn.Module):
     def __init__(self, in_dim, head_num=10):
@@ -147,6 +147,7 @@ class GumbelTreeGRU(nn.Module):
         old_h_left, old_h_right = old_h[:, :-1, :], old_h[:, 1:, :]
 
         comp_weights = self.query_layer(new_h).squeeze(2)
+
 
         if self.training:
             select_mask = utils.st_gumbel_softmax(
