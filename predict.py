@@ -8,7 +8,7 @@ import numpy as np
 logging.basicConfig(level=logging.INFO,
                     format='%(asctime)s %(levelname)-8s %(message)s')
 
-DEVICE = 'cuda:2'
+DEVICE = 'cuda:0'
 
 
 def predict(config, model_name, data_name):

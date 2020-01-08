@@ -1,7 +1,6 @@
 from collections import OrderedDict
 
 import matplotlib.pyplot as plt
-import torch
 
 from dataset import *
 from network.model import *
@@ -224,7 +223,6 @@ def visualize(config, model_name, case_name):
         print(item)
         sent = get_sentence(item)
 
-
         case_logit, case_word_attn, case_tree_order, case_sent_attn = run_iter(batch=case)
         case_word_attn = np.mean(np.array(case_word_attn), axis=0)
 
@@ -234,7 +232,6 @@ def visualize(config, model_name, case_name):
         parse_tree = get_parse_tree(sent, case_tree_order)
         print(sent)
         print(parse_tree)
-
         print(case_sent_attn)
 
         index += 1
@@ -243,7 +240,6 @@ def visualize(config, model_name, case_name):
 if __name__ == '__main__':
     from data.dti import config
 
-    config.BATCH_SIZE = 4096
-    DEVICE = 'cuda:3'
-    # top_k(config, 'dti-0.5419.pkl', top_k=100)
-    visualize(config, 'dti-0.5419.pkl', case_name='case1.json')
+    DEVICE = 'cuda:0'
+
+    visualize(config, 'dti-0.5419.pkl', case_name='tree_example.json')

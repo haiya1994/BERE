@@ -39,7 +39,6 @@ def test(config, model_name):
     print('# of word embedding parameters: {}'.format(num_embedding_params))
     print('# of parameters (excluding embeddings): {}'.format(num_params - num_embedding_params))
 
-    # model.load_state_dict(torch.load(utils.best_model_path(config.SAVE_DIR, config.DATA_SET, i=1), map_location='cpu'))
     model.load_state_dict(
         torch.load(os.path.join(config.SAVE_DIR, config.DATA_SET, model_name), map_location='cpu'))
     model.eval()

@@ -1,7 +1,6 @@
 from sklearn import metrics
 from torch import optim
 from torch.nn.utils import clip_grad_norm_
-from torch.optim import lr_scheduler
 
 from dataset import *
 from network.model import *
@@ -9,11 +8,16 @@ from network.model import *
 logging.basicConfig(level=logging.INFO,
                     format='%(asctime)s %(levelname)-8s %(message)s')
 
-DEVICE = 'cuda:2'
+DEVICE = 'cuda:0'
 VALID_TIMES = 20
 
 
 def train(config, log_path):
+    """
+    Before training, the input with '.json' format must be transformed into '.pt'
+    format by 'data_prepare.py'. This process will also generate the 'vocab.pt'
+    file which contains the basic statistics of the corpus.
+    """
     log_f = open(log_path, 'a')
 
     if config.BAG_MODE:
@@ -62,10 +66,6 @@ def train(config, log_path):
     optimizer = optim.Adam(params, lr=config.LEARNING_RATE, weight_decay=config.L2_REG)
 
     validate_every = len(train_loader) // VALID_TIMES
-
-    scheduler = lr_scheduler.ReduceLROnPlateau(
-        optimizer=optimizer, mode='max', factor=0.5,
-        patience=VALID_TIMES * config.HALVE_LR_EVERY, verbose=True)
 
     def run_iter(batch, is_training):
         model.train(is_training)
@@ -154,7 +154,6 @@ def train(config, log_path):
 
                 train_f1 = metrics.f1_score(train_labels, train_preds, [1, 2, 3, 4, 5], average='micro')
 
-                scheduler.step(valid_auc)
                 progress = epoch_num + (batch_iter + 1) / len(train_loader)
 
                 logging.info(
@@ -177,5 +176,7 @@ def train(config, log_path):
 if __name__ == '__main__':
     from data.dti import config
 
-    config.LEARNING_RATE = 1 / 10000.0
-    train(config, 'dti.log')
+    for lr in range(1, 10):
+        config.LEARNING_RATE = lr / 10000.0
+        config.log()
+        F = train(config, 'dti.log')
