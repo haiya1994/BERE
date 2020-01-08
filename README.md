@@ -8,8 +8,6 @@ Tested on Python 3.5.2 and PyTorch 1.0.0.
 The download link of full datasets:
 https://cloud.tsinghua.edu.cn/d/9a117f17200e4b55b79f/
 
-Please put it in \BERE\data.
-
 
 ## How to Run
 [DDI Expirement]
@@ -25,3 +23,5 @@ Run test_ddi.py for testing
 Run train_dti.py for training
 
 Run test_dti.py for testing
+
+Run predict.py for prediction
