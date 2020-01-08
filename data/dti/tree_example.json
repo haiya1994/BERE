@@ -1,0 +1,28 @@
+[
+  {
+    "relation": "substrate",
+    "pmid": "26808671",
+    "head": {
+      "id": "DB00762",
+      "word": "Irinotecan"
+    },
+    "tail": {
+      "id": "P22309",
+      "word": "UGT1A1"
+    },
+    "sentence": "Irinotecan toxicity correlates with UGT1A1 activity ."
+  },
+  {
+    "pmid": "8961074",
+    "tail": {
+      "word": "angiotensin-converting enzyme",
+      "id": "P12821"
+    },
+    "sentence": "Moexipril is a new , long-acting angiotensin-converting enzyme inhibitor .",
+    "head": {
+      "word": "Moexipril",
+      "id": "DB00691"
+    },
+    "relation": "inhibitor"
+  }
+]
