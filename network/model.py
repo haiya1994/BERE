@@ -3,6 +3,34 @@ from network.selector import *
 
 
 class REModel_INS(nn.Module):
+    """
+    The relation extraction model with INS mode, which will classify each
+    sentence instance into an individual class.
+
+    Args:
+        vocab (object): The vocab object which contains the
+            basic statics of the corpus. See dataset.py for
+            more details.
+        tag_dim (int): The dimension of POS (part-of-speech)
+            embedding.
+        max_length (int): All the sentences will be cropped
+            or padded to the max_length.
+        hidden_dim (int): The dimension of hidden unit in
+            GRU.
+        dropout_prob (float): Probability of an element
+            to be zeroed.
+        bidirectional (bool): If true, bi-directional GRU
+            will be used.
+
+    Inputs: sent, tag, length, verbose_output
+        - **sent** of shape `(batch, seq_len, word_dim)`.
+        - **tag** of shape `(batch, seq_len, tag_dim)`.
+        - **length** of shape `(batch)`.
+
+    Outputs: logit
+        - **logit** of shape `(batch, class_num)`.
+    """
+
     def __init__(self, vocab, tag_dim, max_length, hidden_dim,
                  dropout_prob,
                  bidirectional=True):
@@ -80,6 +108,34 @@ class REModel_INS(nn.Module):
 
 
 class REModel_BAG(nn.Module):
+    """
+    The relation extraction model with BAG mode, which will classify each
+    sentence bag into an individual class.
+
+    Args:
+        vocab (object): The vocab object which contains the
+            basic statics of the corpus. See dataset.py for
+            more details.
+        tag_dim (int): The dimension of POS (part-of-speech)
+            embedding.
+        max_length (int): All the sentences will be cropped
+            or padded to the max_length.
+        hidden_dim (int): The dimension of hidden unit in
+            GRU.
+        dropout_prob (float): Probability of an element
+            to be zeroed.
+        bidirectional (bool): If true, bi-directional GRU
+            will be used.
+
+    Inputs: sent, tag, length, verbose_output
+        - **sent** of shape `(batch, seq_len, word_dim)`.
+        - **tag** of shape `(batch, seq_len, tag_dim)`.
+        - **length** of shape `(batch)`.
+
+    Outputs: logit
+        - **logit** of shape `(batch, class_num)`.
+    """
+
     def __init__(self, vocab, tag_dim, max_length, hidden_dim,
                  dropout_prob,
                  bidirectional=True):
