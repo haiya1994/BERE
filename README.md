@@ -1,8 +1,8 @@
 # BERE
-Implementation of the paper [BERE: An accurate distantly supervised biomedical entity relation extraction network].
+Implementation of the paper [BERE: A novel machine learning framework for accurate biomedical entity relation extraction].
 
 ## Environment
-Tested on Python 3.5 and PyTorch 1.0.0.
+Tested on Python 3.5.2 and PyTorch 1.0.0.
 
 ## Data
 The download link of full datasets:
