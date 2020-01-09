@@ -2,7 +2,10 @@
 Implementation of the paper [BERE: A novel machine learning framework for accurate biomedical entity relation extraction].
 
 ## Environment
-Tested on Python 3.5.2 and PyTorch 1.0.0.
+Python    3.5.2
+PyTorch   1.0.0
+sklearn   0.20.2
+numpy     1.15.4
 
 ## Data
 The download link of full datasets: https://cloud.tsinghua.edu.cn/d/9a117f17200e4b55b79f/.
