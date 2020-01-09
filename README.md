@@ -2,6 +2,8 @@
 Implementation of the paper [BERE: A novel machine learning framework for accurate biomedical entity relation extraction].
 
 ## Environment
+Tested on a linux server with GeForce GTX 1080 and the running environment is as follows:
+
 - Python    3.5.2
 
 - PyTorch   1.0.0
@@ -10,6 +12,7 @@ Implementation of the paper [BERE: A novel machine learning framework for accura
 
 - numpy     1.15.4
 
+- cuda      9.0
 
 ## Data
 The download link of full datasets: https://cloud.tsinghua.edu.cn/d/9a117f17200e4b55b79f/.
@@ -19,7 +22,7 @@ The download link of word embedding: http://evexdb.org/pmresources/vec-space-mod
 The download link of DDI'13 dataset can also be found in: https://github.com/arwhirang/DDI-recursive-NN/.
 
 ## How to Run
-[DDI Expirement]
+[DDI Expirement](less than 1h for one training)
 1. Download the pretrained word embedding `PubMed-and-PMC-w2v.bin` to `./data/`.
 
 2. Run  `./data/ddi/data_prepare.py` to preprocess the DDI dataset.
@@ -30,7 +33,7 @@ The download link of DDI'13 dataset can also be found in: https://github.com/arw
 
 &nbsp;
 
-[DTI Expirement]
+[DTI Expirement](taking 10~20h before convergence)
 
 1. Download the pretrained word embedding `PubMed-and-PMC-w2v.bin` to `./data/`.
 
@@ -86,4 +89,6 @@ The download link of DDI'13 dataset can also be found in: https://github.com/arw
 - `./visualize.py`(optional): This file is used for the visualization of word attention, sentence attention and sentence tree structures.
 
 ## Notes
-The full backup image can be found in https://cloud.tsinghua.edu.cn/d/9a117f17200e4b55b79f/ and the full datasets for discovering novel DTIs is available from the corresponding authors upon request. If you have any other questions or comments, please feel free to email Lixiang Hong (honglx17[at]mails[dot]tsinghua[dot]edu[dot]cn) and/or Jianyang Zeng (zengjy321[at]tsinghua[dot]edu[dot]cn).
+- The full backup data, codes and results can be found in https://cloud.tsinghua.edu.cn/d/9a117f17200e4b55b79f/, which could be used for reproduction.
+- The full datasets for discovering novel DTIs is available from the corresponding authors upon request. 
+- If you have any other questions or comments, please feel free to email Lixiang Hong (honglx17[at]mails[dot]tsinghua[dot]edu[dot]cn) and/or Jianyang Zeng (zengjy321[at]tsinghua[dot]edu[dot]cn).
