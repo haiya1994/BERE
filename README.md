@@ -42,6 +42,8 @@ The download link of DDI'13 dataset can also be found in: https://github.com/arw
 
 4. Run `./test_dti.py` to test BERE with the best model.
 
+&nbsp;
+
 [Demo of DTI Prediction]
 
 1. Train the model on the DTI dataset.
@@ -50,7 +52,15 @@ The download link of DDI'13 dataset can also be found in: https://github.com/arw
 
 3. Run `./predict.py` to predict the targets of the drug nintedanib by the well-trained model.
 
-## File description
+## Data Description
+- `PubMed-and-PMC-w2v.bin`: The pretrained word embedding.
+- `train.json`, `valid.json`, `test.json`: The original dataset.
+- `label2id.json`: The labels.
+- `pmc_nintedanib.json`: The data for DTI Prediction demo.
+- `tree_examples.json`: The data for visualization demo.
+- `config.py`: The hyper-parameter settings.
+
+## File Description
 - `./data/`: This directory contains DDI dataset, DTI dataset and pretrained word embedding.
 
 - `./network/`: This directory contains the codes of our model.
@@ -74,3 +84,6 @@ The download link of DDI'13 dataset can also be found in: https://github.com/arw
 - `./plot_pr.py`: This file is used to plot the precision-recall curve of the results in `./result/`.
 
 - `./visualize.py`(optional): This file is used for the visualization of word attention, sentence attention and sentence tree structures.
+
+## Notes
+The full backup image can be found in https://cloud.tsinghua.edu.cn/d/9a117f17200e4b55b79f/ and the full datasets for discovering novel DTIs is available from the corresponding authors upon request. If you have any other questions or comments, please feel free to email Lixiang Hong (honglx17[at]mails[dot]tsinghua[dot]edu[dot]cn) and/or Jianyang Zeng (zengjy321[at]tsinghua[dot]edu[dot]cn).
