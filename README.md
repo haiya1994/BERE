@@ -7,17 +7,14 @@ Tested on Python 3.5.2 and PyTorch 1.0.0.
 ## Data
 The download link of full datasets: https://cloud.tsinghua.edu.cn/d/9a117f17200e4b55b79f/.
 
-The download link of word embedding: http://evexdb.org/pmresources/vec-space-models/.
+The download link of word embedding: http://evexdb.org/pmresources/vec-space-models/. Please put it in /data/.
 
-The download link of DDI'13 dataset can also be found in: https://github.com/arwhirang/DDI-recursive-NN/. We transformed them into '.json'.
+The download link of DDI'13 dataset can also be found in: https://github.com/arwhirang/DDI-recursive-NN/.
 
 ## How to Run
-Download 'PubMed-and-PMC-w2v.bin' from http://evexdb.org/pmresources/vec-space-models/ and put it at data/
-
-
 [DDI Expirement]
 
-Run data/ddi/data_prepare.py for data preparation
+Run data/ddi/data_prepare.py
 
 Run train_ddi.py for training
 
@@ -25,6 +22,8 @@ Run test_ddi.py for testing
 
 
 [DTI Expirement]
+
+Run data/ati/data_prepare.py
 
 Run train_dti.py for training
 
