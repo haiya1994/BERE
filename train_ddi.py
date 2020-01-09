@@ -157,7 +157,7 @@ def train(config, log_path):
 if __name__ == '__main__':
     from data.ddi import config
 
-    for lr in range(1, 10):
+    for lr in range(1, 11):
         config.LEARNING_RATE = lr / 10000.0
         config.log()
         F = train(config, 'ddi.log')
