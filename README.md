@@ -15,7 +15,7 @@ Tested on a linux server with GeForce GTX 1080 and the running environment is as
 - cuda      9.0
 
 ## Data
-The download link of full datasets: https://cloud.tsinghua.edu.cn/d/9a117f17200e4b55b79f/.
+The download link of full datasets: https://cloud.tsinghua.edu.cn/d/0e3a253403914c33b3dd/.
 
 The download link of word embedding: http://evexdb.org/pmresources/vec-space-models/. Please put it in `./data/`.
 
@@ -89,6 +89,6 @@ The download link of DDI'13 dataset can also be found in: https://github.com/arw
 - `./visualize.py`(optional): This file is used for the visualization of word attention, sentence attention and sentence tree structures.
 
 ## Notes
-- The full backup data, codes and results can be found in https://cloud.tsinghua.edu.cn/d/9a117f17200e4b55b79f/, which could be used for reproduction.
+- The full backup data, codes and results can be found in https://cloud.tsinghua.edu.cn/d/0e3a253403914c33b3dd/, which could be used for reproduction.
 - The full datasets for discovering novel DTIs is available from the corresponding authors upon request. 
 - If you have any other questions or comments, please feel free to email Lixiang Hong (honglx17[at]mails[dot]tsinghua[dot]edu[dot]cn) and/or Jianyang Zeng (zengjy321[at]tsinghua[dot]edu[dot]cn).
