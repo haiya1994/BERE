@@ -8,7 +8,7 @@ from network.model import *
 logging.basicConfig(level=logging.INFO,
                     format='%(asctime)s %(levelname)-8s %(message)s')
 
-DEVICE = 'cuda:0'
+DEVICE = 'cuda:1'
 VALID_TIMES = 20
 
 

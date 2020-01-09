@@ -10,7 +10,7 @@ logging.basicConfig(level=logging.INFO,
 DEVICE = 'cuda:0'
 
 
-def test(config, model_name):
+def test(config, model_name=None):
     if config.BAG_MODE:
         REModel = REModel_BAG
         DataLoader = DataLoader_BAG
@@ -43,9 +43,15 @@ def test(config, model_name):
     print('# of word embedding parameters: {}'.format(num_embedding_params))
     print('# of parameters (excluding embeddings): {}'.format(num_params - num_embedding_params))
 
-    # model.load_state_dict(torch.load(utils.best_model_path(config.SAVE_DIR, config.DATA_SET, i=1), map_location='cpu'))
-    model.load_state_dict(
-        torch.load(os.path.join(config.SAVE_DIR, config.DATA_SET, model_name), map_location='cpu'))
+    if model_name is None:
+        model_path = utils.best_model_path(config.SAVE_DIR, config.DATA_SET, i=0)
+        logging.info('Loading the best model on validation set: {}'.format(model_path))
+        model.load_state_dict(torch.load(model_path, map_location='cpu'))
+    else:
+        model_path = os.path.join(config.SAVE_DIR, config.DATA_SET, model_name)
+        logging.info('Loading the model: {}'.format(model_path))
+        model.load_state_dict(
+            torch.load(model_path, map_location='cpu'))
     model.eval()
     model.to(DEVICE)
     model.display()
@@ -110,4 +116,4 @@ def test(config, model_name):
 if __name__ == '__main__':
     from data.dti import config
 
-    test(config, 'dti-0.5419.pkl')
+    test(config)
