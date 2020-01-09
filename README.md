@@ -1,7 +1,7 @@
 # BERE
 Implementation of the paper [BERE: A novel machine learning framework for accurate biomedical entity relation extraction].
 
-## Environment
+## Environments
 Tested on a linux server with GeForce GTX 1080 and the running environment is as follows:
 
 - Python    3.5.2
@@ -14,36 +14,27 @@ Tested on a linux server with GeForce GTX 1080 and the running environment is as
 
 - cuda      9.0
 
-## Data
-The download link of full datasets: https://cloud.tsinghua.edu.cn/d/0e3a253403914c33b3dd/.
+## Installation Guide
+1. Download the pretrained word embedding `PubMed-and-PMC-w2v.bin` from http://evexdb.org/pmresources/vec-space-models/ and put it in `./data/`.
 
-The download link of word embedding: http://evexdb.org/pmresources/vec-space-models/. Please put it in `./data/`.
-
-The download link of DDI'13 dataset can also be found in: https://github.com/arwhirang/DDI-recursive-NN/.
+2. Download the complete DTI dataset from https://cloud.tsinghua.edu.cn/d/1bdb3bed3031479c8aa9/ and put it in `./data/dti/`.
 
 ## How to Run
 [DDI Expirement](less than 1h for one training)
-1. Download the pretrained word embedding `PubMed-and-PMC-w2v.bin` to `./data/`.
+1. Run  `./data/ddi/data_prepare.py` to preprocess the DDI dataset.
 
-2. Run  `./data/ddi/data_prepare.py` to preprocess the DDI dataset.
+2. Run `./train_ddi.py` to train BERE with different learning rates.
 
-3. Run `./train_ddi.py` to train BERE with different learning rates.
-
-4. Run `./test_ddi.py` to test BERE with the best model.
+3. Run `./test_ddi.py` to test BERE with the best model.
 
 &nbsp;
 
 [DTI Expirement](taking 10~20h before convergence)
+1. Run  `./data/dti/data_prepare.py` to preprocess the DTI dataset.
 
-1. Download the pretrained word embedding `PubMed-and-PMC-w2v.bin` to `./data/`.
+2. Run `./train_dti.py` to train BERE with different learning rates.
 
-2. Download the DTI dataset to `./data/dti/`.
-
-2. Run  `./data/dti/data_prepare.py` to preprocess the DTI dataset.
-
-3. Run `./train_dti.py` to train BERE with different learning rates.
-
-4. Run `./test_dti.py` to test BERE with the best model.
+3. Run `./test_dti.py` to test BERE with the best model.
 
 &nbsp;
 
@@ -58,7 +49,7 @@ The download link of DDI'13 dataset can also be found in: https://github.com/arw
 ## Data Description
 - `PubMed-and-PMC-w2v.bin`: The pretrained word embedding.
 - `train.json`, `valid.json`, `test.json`: The original dataset.
-- `label2id.json`: The labels.
+- `label2id.json`: The label file.
 - `pmc_nintedanib.json`: The data for DTI Prediction demo.
 - `tree_examples.json`: The data for visualization demo.
 - `config.py`: The hyper-parameter settings.
