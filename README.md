@@ -20,7 +20,7 @@ Run train_ddi.py for training
 
 Run test_ddi.py for testing
 
-&nbsp
+&nbsp;
 
 [DTI Expirement]
 
