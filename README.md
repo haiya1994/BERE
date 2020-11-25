@@ -1,5 +1,5 @@
 # BERE
-Implementation of the paper [BERE: A novel machine learning framework for accurate biomedical entity relation extraction].
+Implementation of the paper [A novel machine learning framework for automated biomedical relation extraction from large-scale literature repositories](https://www.nature.com/articles/s42256-020-0189-y).
 
 ## Environments
 Tested on a linux server with GeForce GTX 1080 and the running environment is as follows:
