@@ -80,6 +80,6 @@ Tested on a linux server with GeForce GTX 1080 and the running environment is as
 - `./visualize.py`(optional): This file is used for the visualization of word attention, sentence attention and sentence tree structures.
 
 ## Notes
-- The full backup data, codes and results can be found in https://cloud.tsinghua.edu.cn/d/0e3a253403914c33b3dd/, which could be used for reproduction.
+- The full backup data, codes and results can be found in https://cloud.tsinghua.edu.cn/d/c9651d22d3f94fb7a4f8/ which could be used for reproduction.
 - The full datasets for discovering novel DTIs is available from the corresponding authors upon request. 
 - If you have any other questions or comments, please feel free to email Lixiang Hong (honglx17[at]mails[dot]tsinghua[dot]edu[dot]cn) and/or Jianyang Zeng (zengjy321[at]tsinghua[dot]edu[dot]cn).
