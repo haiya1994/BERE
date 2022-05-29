@@ -17,7 +17,7 @@ Tested on a linux server with GeForce GTX 1080 and the running environment is as
 ## Installation Guide
 1. Download the pretrained word embedding `PubMed-and-PMC-w2v.bin` from http://evexdb.org/pmresources/vec-space-models/ and put it in `./data/`.
 
-2. Download the complete DTI dataset from https://cloud.tsinghua.edu.cn/d/c9651d22d3f94fb7a4f8/ and put it in `./data/dti/`.
+2. Download the complete DTI dataset from https://www.aliyundrive.com/s/QqSG9H3guEP and put it in `./data/dti/`.
 
 ## How to Run
 [DDI Expirement](less than 1h for one training)
